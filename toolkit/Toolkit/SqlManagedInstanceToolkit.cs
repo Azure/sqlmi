@@ -142,7 +142,7 @@ public partial class SqlManagedInstanceToolkit
             {
                 // Try writing to the file
                 //
-                string requestUri = string.Format("{0}/checktestblob_{1}?{2}", storageAccount.Value, DateTime.UtcNow.ToString("yyyyMMd_HHmmss"), sasToken);
+                string requestUri = string.Format("{0}/checktestblob_{1}_{2}?{3}", storageAccount.Value, DateTime.UtcNow.ToString("yyyyMMd_HHmmss"), Guid.NewGuid().ToString("N"), sasToken);
                 HttpWebRequest request = HttpWebRequest.CreateHttp(requestUri);
                 request.Method = "PUT";
                 request.ContentType = "text/plain; charset=UTF-8";
