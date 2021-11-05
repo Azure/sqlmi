@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/toolkit/DllConvertToStream/bin/Debug
+/toolkit/DllConvertToStream/obj/Debug
+/toolkit/Toolkit/bin/Debug
+/toolkit/Toolkit/obj/Debug
+/toolkit/.vs/*
+/toolkit/Toolkit/*
