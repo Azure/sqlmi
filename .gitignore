@@ -6,5 +6,5 @@
 /toolkit/DllConvertToStream/obj/Debug
 /toolkit/Toolkit/bin/Debug
 /toolkit/Toolkit/obj/Debug
-/toolkit/.vs/Toolkit/v15/Server/sqlite3
-/toolkit/Toolkit/Toolkit.sqlproj.user
+/toolkit/.vs/*
+/toolkit/Toolkit/*
