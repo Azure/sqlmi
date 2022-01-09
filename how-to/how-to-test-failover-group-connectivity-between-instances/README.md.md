@@ -47,11 +47,11 @@ You’ll need to run the following steps twice, so you can test connectivity in 
    WHERE parameter_name = 'HadrPort';
    ```
 
-You will get something like:
+   You will get something like:
 
    ![image.png](./image-4dd11f01-e9df-4bb5-b5d9-456430317310.png)
 
-Save the result to be used in next steps. Note that the parameters we just generated may change after any reconfiguration, be sure to generate them again if needed.
+   Save the result to be used in next steps. Note that the parameters we just generated may change after any reconfiguration, be sure to generate them again if needed.
 
 3. Now that we know what endpoints on secondary instance should we test against, let's connect to primary instance.
 
@@ -105,7 +105,7 @@ Save the result to be used in next steps. Note that the parameters we just gener
    WHERE J.name=N'TestFoGConnection' and step_id <> 0
    --END
    ```
- 5. Replace the parameters with the values you got from step #2, like:
+5. Replace the parameters with the values you got from step #2, like:
    
    ```sql
    --START
