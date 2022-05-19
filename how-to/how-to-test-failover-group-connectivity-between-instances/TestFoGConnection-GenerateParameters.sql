@@ -1,4 +1,4 @@
-SELECT 'DECLARE @server NVARCHAR(512) = N'''+ value + ''''
+SELECT 'DECLARE @serverName NVARCHAR(512) = N'''+ value + ''''
 FROM sys.dm_hadr_fabric_config_parameters
 WHERE parameter_name  = 'DnsRecordName'
 UNION
