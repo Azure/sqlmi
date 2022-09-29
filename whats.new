@@ -3,7 +3,7 @@ This is a list of the improvements that landed in the Azure SQL Managed Instance
 ############################################################################################
 
 28th Sep 2022 - Geo-Zone Redundant Storage for SQL MI (GA) - (https://azure.microsoft.com/en-us/updates/azure-sql-general-availability-updates-for-late-september-2022-2/)
-28th Sep 2022 - New TempDB configurations for SQL MI - (https://techcommunity.microsoft.com/t5/azure-sql-blog/improve-your-sql-managed-instance-performance-with-new-tempdb/ba-p/3640094)
+28th Sep 2022 - New TempDB configurations for SQL MI (GA) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/improve-your-sql-managed-instance-performance-with-new-tempdb/ba-p/3640094)
 28th Sep 2022 - Premium-Series Memory Optimized (GA) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/general-availability-of-mem-opt-premium-series-hw-and-16-tb/ba-p/3640038)
 28th Sep 2022 - 16 TB support for Business Critical service tier (GA) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/general-availability-of-mem-opt-premium-series-hw-and-16-tb/ba-p/3640038)
 12th Sep 2022 - Data Virtualization with ADLS (GA) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/data-virtualization-now-generally-available-in-azure-sql-managed/ba-p/3624292)
