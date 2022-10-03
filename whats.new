@@ -14,6 +14,7 @@ This is a list of the improvements that landed in the Azure SQL Managed Instance
 19th Jul 2022 - Premium-series hardware for Azure SQL Managed Instance (GA) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/announcing-the-general-availability-of-premium-series-hardware/ba-p/3576737)
 14th Jul 2022 - Resumable restore improves SQL Managed Instance database migrations experience (GA) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/resumable-restore-improves-sql-managed-instance-database/ba-p/3573367)
 27th Jun 2022 - Restoring a SQL Managed Instance database backup to SQL Server 2022 (Private Preview) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/restoring-a-sql-managed-instance-database-backup-to-sql-server/ba-p/3556325)
+15th Jun 2022 - Cross vNet SQL Managed Instance move (GA) - ()
 1st  Jun 2022 - User-assigned managed identity (UMI) in Azure AD for Azure SQL (GA) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/user-assigned-managed-identity-umi-in-azure-ad-for-azure-sql/ba-p/3457113)
 19th May 2022 - Connecting SQL Server 2016 Std/Dev/Ent to Azure SQL Managed Instance (Preview) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/connecting-sql-server-2016-to-azure-sql-managed-instance-link/ba-p/3401406)
 4th  Apr 2022 - Online Database Move and Copy for SQL Managed Instance (Private Preview) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/online-database-move-and-copy-for-sql-managed-instance-private/ba-p/3275690)
