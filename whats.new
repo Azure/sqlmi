@@ -69,7 +69,7 @@ This is a list of the improvements that landed in the Azure SQL Managed Instance
 22nd Sep 2020 - Hosting SSRS catalog for all supported SQL Server versions on SQL MI (GA)
 22nd Sep 2020 - Major IO performance improvements for SQL MI (GA)
 22nd Sep 2020 - Machine Learning for SQL MI (Preview)
-22nd Sep 20202 - Enhanced management experience for SQL MI (GA)
+22nd Sep 2020 - Enhanced management experience for SQL MI (GA)
 2nd  Sep 2020 - User-initiated failover for SQL MI (Preview)
 5th  Aug 2020 - Configurable backup retention period for PITR for SQL MI (Preview)
 5th  Aug 2020 - Configurable backup storage redundancy for SQL MI (Preview)
