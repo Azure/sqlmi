@@ -31,6 +31,12 @@ GRANT UNSAFE ASSEMBLY TO [<your_user>]
 
 USE [<your_database>]
 
+EXEC sp_configure 'show advanced options', 1;
+RECONFIGURE;
+
+EXEC sp_configure 'clr enabled', 1
+RECONFIGURE
+
 EXEC sp_configure 'clr strict security', 0
 RECONFIGURE
 
@@ -41,6 +47,20 @@ N'SqlManagedInstanceToolkit, version=0.0.0.0, culture=neutral, publickeytoken=nu
 --DROP ASSEMBLY [SqlManagedInstanceToolkit]
 CREATE ASSEMBLY [SqlManagedInstanceToolkit]
 FROM {0} WITH PERMISSION_SET = EXTERNAL_ACCESS;
+
+--DROP PROCEDURE dbo.SqlManagedInstanceToolkit_CheckIpAddressAccessibility
+CREATE PROCEDURE dbo.SqlManagedInstanceToolkit_CheckIpAddressAccessibility (@ipAddress AS NVARCHAR(MAX), @port AS INT) AS EXTERNAL NAME [SqlManagedInstanceToolkit].[SqlManagedInstanceToolkit].[CheckIpAddressAccessibility];
+
+DECLARE @ipAddress NVARCHAR(MAX) = '<ip address>'
+DECLARE @port INT = <port>
+EXEC dbo.SqlManagedInstanceToolkit_CheckStorageAccountAccessibility @ipAddress, @port
+
+--DROP PROCEDURE dbo.SqlManagedInstanceToolkit_CheckFqdnAccessibility
+CREATE PROCEDURE dbo.SqlManagedInstanceToolkit_CheckFqdnAccessibility (@fqdn AS NVARCHAR(MAX), @port AS INT) AS EXTERNAL NAME [SqlManagedInstanceToolkit].[SqlManagedInstanceToolkit].[CheckFqdnAccessibility];
+
+DECLARE @fqdn NVARCHAR(MAX) = '<fqdn>'
+DECLARE @port INT = <port>
+EXEC dbo.SqlManagedInstanceToolkit_CheckFqdnAccessibility @fqdn, @port
 
 --DROP PROCEDURE dbo.SqlManagedInstanceToolkit_CheckStorageAccountAccessibility
 CREATE PROCEDURE dbo.SqlManagedInstanceToolkit_CheckStorageAccountAccessibility (@strg AS NVARCHAR(MAX), @sas AS NVARCHAR(MAX), @write BIT) AS EXTERNAL NAME [SqlManagedInstanceToolkit].[SqlManagedInstanceToolkit].[CheckStorageAccountAccessibility];

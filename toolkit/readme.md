@@ -9,6 +9,18 @@
 ## Generated scripts:
 - To install Toolkit use content from commands.sql file and c/p commands to your SQL Managed Instance.
 - After executing set of steps you should be able to execute following checks:
+	- dbo.SqlManagedInstanceToolkit_CheckIpAddressAccessibility 
+		- Parameters : 
+			- ipAddress - IP address to check
+			- port - port to check
+		- Description : can be used to inspect whether your SQL MI can reach particular IP and port and return errors in case endpoint is not accessible.
+
+	- dbo.SqlManagedInstanceToolkit_CheckFqdnAccessibility 
+		- Parameters : 
+			- fqdn - Fully quailified domain name to check
+			- port - port to check
+		- Description : can be used to inspect whether your SQL MI have access to the given storage fqdn:port and return errors in case endpoint is not accessible.
+
 	- dbo.SqlManagedInstanceToolkit_CheckStorageAccountAccessibility 
 		- Parameters : 
 			- strgToTest - full uri address of the storage account
