@@ -27,6 +27,152 @@ using Microsoft.SqlServer.Server;
 public partial class SqlManagedInstanceToolkit
 {
     /// <summary>
+    /// Check IP and return output.
+    /// </summary>
+    /// <param name="ipAddress"></param>
+    /// <param name="port"></param>
+    /// <returns></returns>
+    private static List<string> CheckIp(string ipAddress, int port = 443)
+    {
+        List<string> result = new List<string>();
+
+        // Check tcp connection to port
+        //
+        if (ipAddress != null)
+        {
+            try
+            {
+                Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
+                socket.Connect(ipAddress, port);
+
+                if (socket.Connected)
+                {
+                    result.Add(string.Format("TCP connect to {0}:{1} was successful.", ipAddress, port));
+                }
+            }
+            catch (SocketException se)
+            {
+                if (se.ErrorCode == 10061)
+                {
+                    result.Add(string.Format("TCP connect to {0}:{1} failed because there were no listener. However the port is open.", ipAddress, port));
+                }
+                else
+                {
+                    result.Add(string.Format("TCP connect to {0}:{1} failed with {2}.", ipAddress, port, se.Message));
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Add(string.Format("TCP connect to {0}:{1} failed with {2}.", ipAddress, port, ex.Message));
+            }
+        }
+
+        return result;
+    }
+
+    /// <summary>
+    /// Check FQDN and return ipAddress and output.
+    /// </summary>
+    /// <param name="fqdn"></param>
+    /// <param name="ipAddress"></param>
+    /// <returns></returns>
+    private static List<string> CheckFqdn(string fqdn, out string ipAddress)
+    {
+        ipAddress = null;
+        List<string> result = new List<string>();
+
+        // Resolve fqdn
+        //
+        try
+        {
+            int cnt = 0;
+            string addresses = string.Empty;
+            IPHostEntry destination = Dns.GetHostEntry(fqdn);
+
+            foreach (var addr in destination.AddressList)
+            {
+                addresses += addr + ";";
+
+                if (cnt++ == 0)
+                {
+                    ipAddress = addr.ToString();
+                }
+            }
+
+            result.Add(string.Format("Hostname {0} was successfully resolved to: {1}.", fqdn, addresses));
+        }
+        catch (SocketException se)
+        {
+            if (se.ErrorCode == 11001)
+            {
+                result.Add(string.Format("Hostname {0} could not be found", fqdn));
+            }
+            else
+            {
+                result.Add(string.Format("DNS resolution of {0} thrown following error {1}.", fqdn, se.ErrorCode));
+            }
+        }
+        catch (Exception ex)
+        {
+            result.Add(string.Format("DNS resolution of {0} thrown following exc {1}.", fqdn, ex.Message));
+        }
+
+        // Check TCP ping
+        //
+        Ping ping = new Ping();
+        try
+        {
+            PingReply reply = ping.Send(fqdn);
+            result.Add(string.Format("PING to {0} reported status {1}.", fqdn, reply.Status));
+        }
+        catch (Exception ex)
+        {
+            result.Add(string.Format("PING to {0} thrown following exc {1}.", fqdn, ex.Message));
+        }
+
+        return result;
+    }
+
+    /// <summary>
+    /// Check IP address accessibility.
+    /// </summary>
+    /// <param name="ipAddress"></param>
+    /// <param name="port"></param>
+    [Microsoft.SqlServer.Server.SqlProcedure]
+    public static void CheckIpAddressAccessibility(SqlString ipAddress, SqlInt32 port)
+    {
+        List<string> result = CheckIp(ipAddress.Value, port.Value);
+
+        // Expose results.
+        //
+        foreach (var row in result)
+        {
+            SqlContext.Pipe.Send(row);
+        }
+    }
+
+    /// <summary>
+    /// Check FQDN accessibility.
+    /// </summary>
+    /// <param name="fqdn"></param>
+    /// <param name="port"></param>
+    [Microsoft.SqlServer.Server.SqlProcedure]
+    public static void CheckFqdnAccessibility(SqlString fqdn, SqlInt32 port)
+    {
+        string ipAddress;
+        List<string> result = CheckFqdn(fqdn.Value, out ipAddress);
+        result.AddRange(CheckIp(ipAddress, port.Value));
+
+        // Expose results.
+        //
+        foreach (var row in result)
+        {
+            SqlContext.Pipe.Send(row);
+        }
+    }
+
+    /// <summary>
     /// Check storage account accessibility.
     /// </summary>
     /// <param name="storageAccount"></param>
@@ -55,88 +201,9 @@ public partial class SqlManagedInstanceToolkit
         if (uri != null)
         {
             string hostname = uri.Host;
-            string IPAddress = null;
-
-            // Resolve fqdn
-            //
-            try
-            {
-                int cnt = 0;
-                string addresses = string.Empty;
-                IPHostEntry destination = Dns.GetHostEntry(hostname);
-
-                foreach (var addr in destination.AddressList)
-                {
-                    addresses += addr + ";";
-
-                    if (cnt++ == 0)
-                    {
-                        IPAddress = addr.ToString();
-                    }
-                }
-
-                result.Add(string.Format("Hostname {0} was successfully resolved to: {1}.", hostname, addresses));
-            }
-            catch (SocketException se)
-            {
-                if (se.ErrorCode == 11001)
-                {
-                    result.Add(string.Format("Hostname {0} could not be found", hostname));
-                }
-                else
-                {
-                    result.Add(string.Format("DNS resolution of {0} thrown following error {1}.", hostname, se.ErrorCode));
-                }
-            }
-            catch (Exception ex)
-            {
-                result.Add(string.Format("DNS resolution of {0} thrown following exc {1}.", hostname, ex.Message));
-            }
-
-            // Check TCP ping
-            //
-            Ping ping = new Ping();
-            try
-            {
-                PingReply reply = ping.Send(hostname);
-                result.Add(string.Format("PING to {0} reported status {1}.", hostname, reply.Status));
-            }
-            catch (Exception ex)
-            {
-                result.Add(string.Format("PING to {0} thrown following exc {1}.", hostname, ex.Message));
-            }
-
-            // Check tcp connection to 443
-            //
-            if (IPAddress != null)
-            {
-                try
-                {
-                    Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-
-                    socket.Connect(IPAddress, 443);
-
-                    if (socket.Connected)
-                    {
-                        result.Add(string.Format("TCP connect to {0}:443 was successful.", hostname));
-                    }
-                }
-                catch (SocketException se)
-                {
-                    if (se.ErrorCode == 10061)
-                    {
-                        result.Add(string.Format("TCP connect to {0}:443 failed because there were no listener. However the port is open.", hostname));
-                    }
-                    else
-                    {
-                        result.Add(string.Format("TCP connect to {0}:443 failed with {1}.", hostname, se.Message));
-                    }
-                }
-                catch (Exception ex)
-                {
-                    result.Add(string.Format("TCP connect to {0}:443 failed with {1}.", hostname, ex.Message));
-                }
-            }
+            string ipAddress;
+            result.AddRange(CheckFqdn(hostname, out ipAddress));
+            result.AddRange(CheckIp(ipAddress, 443));
 
             if (executeWriteOperation.Value)
             {
