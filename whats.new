@@ -2,6 +2,22 @@ Whats new in Azure SQL Managed Instance
 This is a list of the improvements that landed in the Azure SQL Managed Instance
 ############################################################################################
 
+21st Nov 2022 - User-assigned Managed Identity support for TDE Customer Managed Keys CMK in Azure SQL MI (GA) - ()
+16th Nov 2022 - Virtual Clusters hosting Azure SQL Managed Instance are enhanced (Preview) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/virtual-clusters-hosting-azure-sql-managed-instance-are-enhanced/ba-p/3677437)
+16th Nov 2022 - Transactional Replication for SQL MI (GA) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/transactional-replication-ga-for-azure-sql-managed-instance/ba-p/3676818)
+16th Nov 2022 - MS DTC in hybrid environments with SQL MI (Preview) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/distributed-transaction-coordinator-for-azure-sql-managed/ba-p/3676794)
+16th Nov 2022 - Start/Stop features for SQL MI (Preview) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/optimize-cost-of-sql-managed-instances-with-new-stop-start/ba-p/3677508)
+16th Nov 2022 - Database copy & move for SQL MI (Preview) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/database-copy-and-move-for-azure-sql-managed-instance/ba-p/3676845)
+16th Nov 2022 - Cross subscription Point-In-Time Restore (GA) - ()
+16th Nov 2022 - Restoring a SQL Managed Instance database backup to SQL Server 2022 (GA) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/restoring-a-sql-managed-instance-database-backup-to-sql-server/ba-p/3677783)
+16th Nov 2022 - Relaxed network requirements for Azure SQL Managed Instance (GA) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/relaxed-network-requirements-for-azure-sql-managed-instance/ba-p/3661490)
+16th Nov 2022 - Backup transparency with [msdb].[backupset] (GA) - ()
+16th Nov 2022 - Link feature for Managed instance for SQL Server 2022 (GA) - (https://cloudblogs.microsoft.com/sqlserver/2022/11/16/link-feature-for-azure-sql-managed-instance-connecting-sql-server-2022-to-the-cloud-reimagined/)
+16th Nov 2022 - Disaster recovery for SQL Server 2022 with Link feature for Managed instance (Preview) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/the-ultimate-freedom-of-movement-between-sql-server-2022-and/ba-p/3677225)
+16th Nov 2022 - Log Replay Service for SQL MI (GA) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/log-replay-service-for-sql-mi-is-now-generally-available-for-sql/ba-p/3677259)
+16th Nov 2022 - Faster Provisioing (Preview) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/provision-sql-managed-instance-in-under-30-minutes-starting-mid/ba-p/3677823)
+16th Nov 2022 - Zone Redundancy for Azure SQL Managed Instance Business Critical service tier (Preview) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/zone-redundancy-for-azure-sql-managed-instance-business-critical/ba-p/3677646)
+16th Nov 2022 - License-free Geo-DR through passive standby replica (Preview) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/what-is-the-failover-rights-benefit-for-geodr/ba-p/3676999)
 26th Oct 2022 - Automated key rotation for Transparent Data Encryption (TDE) with customer managed key for SQL MI (GA) - ()
 26th Oct 2022 - Approximate Percentile Functions for Azure SQL MI (Preview) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/announcing-preview-of-approximate-percentile-functions-for-azure/ba-p/3662608)
 26th Oct 2022 - Locked Pages in Memory (GA) - ()
