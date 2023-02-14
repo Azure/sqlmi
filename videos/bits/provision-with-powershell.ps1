@@ -16,10 +16,10 @@ Set-AzContext "EnterYourSubscriptionIDHere"
 $NSnetworkModels = "Microsoft.Azure.Commands.Network.Models"
 $NScollections = "System.Collections.Generic"
 # The SubscriptionId in which to create these objects
-$SubscriptionId = 'd2cb2c6b-ec9e-44c1-ba26-88a4209f9680'
+$SubscriptionId = ''
 # Set the resource group name and location for your managed instance
 $resourceGroupName = "myResourceGroup-$(Get-Random)"
-$location = "westus3"
+$location = ""
 # Set the networking values for your managed instance
 $vNetName = "myVnet-$(Get-Random)"
 $vNetAddressPrefix = "20.0.0.0/16"
