@@ -13,10 +13,13 @@ Set-AzContext "EnterYourSubscriptionIDHere"
 
 
 # Create Azure SQL Managed Instance
+# Enter the values for the variables for: 
+# SubscriptionID, ResourceGroupName, location, vNetName, vNetAddressPrefix, miSubnetName, miSubnetAddressPrefix, instancename, miAdminSqlLogin, miAdminSqlPassword, edition, vCores, maxStorge, computeGeneration and license
+# below based on your environment and requirements
 $NSnetworkModels = "Microsoft.Azure.Commands.Network.Models"
 $NScollections = "System.Collections.Generic"
 # The SubscriptionId in which to create these objects
-$SubscriptionId = ''
+$SubscriptionId = ""
 # Set the resource group name and location for your managed instance
 $resourceGroupName = "myResourceGroup-$(Get-Random)"
 $location = ""
@@ -80,5 +83,3 @@ New-AzSqlInstance -Name $instanceName `
                       -StorageSizeInGB $maxStorage -VCore $vCores -Edition $edition `
                       -ComputeGeneration $computeGeneration -LicenseType $license
 
-# Clean up deployment 
-Remove-AzResourceGroup -ResourceGroupName $resourceGroupName
