@@ -2,6 +2,8 @@ Whats new in Azure SQL Managed Instance
 This is a list of the improvements that landed in the Azure SQL Managed Instance
 ############################################################################################
 
+26th Apr 2023 - One-way Managed Instance link for SQL Server 2016 & 2019 (GA) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/announcing-ga-of-the-link-feature-for-azure-sql-managed-instance/ba-p/3806109)
+12th Apr 2023 - SQL Database Projects extension (GA) - (https://learn.microsoft.com/en-us/sql/azure-data-studio/extensions/sql-database-project-extension)
 15th Mar 2023 - Perform necessary maintenance to shrink database files without impacting query performance (GA) - (https://azure.microsoft.com/en-us/updates/azure-sql-general-availability-updates-for-midmarch-2023/)
 15th Mar 2023 - Private Endpoints for Azure SQL MI (Preview) - (https://azure.microsoft.com/en-us/updates/azure-sql-public-preview-updates-for-midmarch-2023/)
 1st  Mar 2023 - Approximate Percentile Functions for Azure SQL MI (GA) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/announcing-general-availability-of-approximate-percentile/ba-p/3755178)
