@@ -2,6 +2,7 @@ Whats new in Azure SQL Managed Instance
 This is a list of the improvements that landed in the Azure SQL Managed Instance
 ############################################################################################
 
+20th Jul 2023 - 128 vCores on Azure SQL Managed Instance Business Critical (GA) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/128-vcores-on-azure-sql-managed-instance-business-critical/ba-p/3879510)
 12th Jul 2023 - SQL Managed Instance now available to all subscription types in large Azure regions (GA) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/sql-managed-instance-now-available-to-all-subscription-types-in/ba-p/3829294)
 25th May 2023 - License-free Geo-DR through passive standby replica (GA) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/save-on-licensing-cost-with-failover-rights-for-azure-sql/ba-p/3831608)
 23rd May 2023 - Azure SQL bindings for Azure Functions (GA) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/announcing-general-availability-of-the-azure-sql-bindings-for/ba-p/3827666)
