@@ -1,0 +1,1 @@
+This folder will contain PPTX presentations. You can take them and use them to present Azure SQL Managed Instance.
