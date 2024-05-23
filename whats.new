@@ -2,6 +2,7 @@ Whats new in Azure SQL Managed Instance
 This is a list of the improvements that landed in the Azure SQL Managed Instance
 ############################################################################################
 
+21st May 2024 - Always-up-to-date policy for Azure SQL Managed Instance (GA) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/update-policy-for-azure-sql-managed-instance/ba-p/4148968)
 22nd Apr 2024 - External REST Endpoint Invocation with Azure SQL Managed Instance (Private) - (https://devblogs.microsoft.com/azure-sql/private-preview-for-external-rest-endpoint-invocation-with-azure-sql-managed-instance)
 21st Mar 2024 - Azure SQL Managed Instance Next-generation General Purpose service tier (Public) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/introducing-azure-sql-managed-instance-next-gen-gp/ba-p/4092647)
 31st Jan 2024 - Azure SQL Managed Instance pools: new features (Public) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/azure-sql-managed-instance-pools-new-features/ba-p/4044688)
