@@ -2,6 +2,7 @@ Whats new in Azure SQL Managed Instance
 This is a list of the improvements that landed in the Azure SQL Managed Instance
 ############################################################################################
 
+10th Oct 2024 - Online disaster recovery between SQL Server 2022 and Azure SQL Managed Instance (GA) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/online-disaster-recovery-between-sql-server-2022-and-azure-sql/ba-p/4265723)
 10th Sep 2024 - Native JSON support now in preview in Azure SQL Managed Instance (Private) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/native-json-support-now-in-preview-in-azure-sql-managed-instance/ba-p/4241273)
 28th Aug 2024 - Vector Support EAP extended to Azure SQL MI (Private) - (https://devblogs.microsoft.com/azure-sql/vector-support-eap-extended-to-azure-sql-mi/)  
 3rd  Jul 2024 - Authenticating Microsoft Entra ID using windows principal metadata (Public) - (https://techcommunity.microsoft.com/t5/azure-sql-blog/authenticating-microsoft-entra-id-using-windows-principal/ba-p/4168647)
