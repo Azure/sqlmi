@@ -2,6 +2,7 @@ Whats new in Azure SQL Managed Instance
 This is a list of the improvements that landed in the Azure SQL Managed Instance
 ############################################################################################
 
+12th Feb 2025 - External REST Endpoint Invocation in Azure SQL Managed Instance is now in Public Preview (Preview) - (https://devblogs.microsoft.com/azure-sql/external-rest-endpoint-invocation-in-mi-in-public-preview)
 20th Jan 2025 - Extending Regular Expressions "Regex" Support on Azure SQL Managed Instance (Preview) - (https://techcommunity.microsoft.com/blog/azuresqlblog/extending-regular-expressions-regex-support-on-azure-sql-managed-instance-mi/4364836)
 15th Jan 2025 - Service endpoint policies for Azure Storage in SQL Managed Instance subnets (GA) - (https://techcommunity.microsoft.com/blog/azuresqlblog/service-endpoint-policies-for-azure-storage-now-generally-available-in-sql-manag/4366541)
 
